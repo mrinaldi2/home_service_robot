@@ -1,7 +1,6 @@
 #!/bin/sh
-export TURTLEBOT_GAZEBO_WORLD_FILE=/home/workspace/catkin_ws/src/worlds/office.world
 
-xterm -e " roslaunch turtlebot_gazebo turtlebot_world.launch" &
+xterm -e " roslaunch turtlebot_gazebo turtlebot_world.launch world_file:=$(rospack find assets)/worlds/office.world" &
 sleep 5
 xterm -e " roslaunch gmapping slam_gmapping_pr2.launch" &
 sleep 5
